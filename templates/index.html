@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cupcakes Index</title>
+  </head>
+  <body>
+    <h1>Cupcake List</h1>
+    <h3>Create Cupcake</h3>
+    <form>
+      <label for="flavor">Flavor:</label>
+      <input id="flavor" type="text" data-id="flavor" />
+      <label for="size">Size:</label>
+      <input id="size" type="text" data-id="size" />
+      <label for="rating">Rating:</label>
+      <input id="rating" type="number" data-id="rating" />
+      <label for="image">Image:</label>
+      <input id="image" type="url" data-id="url" />
+      <br />
+      <button class="create_cupcake_btn">Submit Cupcake</button>
+    </form>
+    <ul>
+      {%for cupcake in cupcakes %}
+      <li>
+        {{cupcake.flavor}} -
+        <button class="delete-cupcake" data-id="{{cupcake.id}}">X</button>
+      </li>
+      {%endfor%}
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="static/cupcakes.js"></script>
+  </body>
+</html>
